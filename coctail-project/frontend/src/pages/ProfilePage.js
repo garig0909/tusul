@@ -11,16 +11,28 @@ function ProfilePage() {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <div className="card p-4 shadow-sm">
-        <h2 className="mb-4">Хувийн мэдээлэл</h2>
+    <div className="container mt-5 d-flex justify-content-center">
+      <div className="card p-5 shadow-lg rounded-4" style={{ maxWidth: '500px', width: '100%' }}>
+        <div className="text-center mb-4">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+            alt="Avatar"
+            style={{ width: '100px', height: '100px', objectFit: 'cover' }}
+            className="rounded-circle shadow-sm"
+          />
+        </div>
+        <h3 className="text-center mb-4">👨‍💼 Хувийн мэдээлэл</h3>
         {user ? (
-          <>
-            <p><strong>Нэр:</strong> {user.username}</p>
-            <p><strong>Имэйл:</strong> {user.email}</p>
-          </>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">
+              <strong>👨‍💼 Нэр:</strong> {user.username}
+            </li>
+            <li className="list-group-item">
+              <strong>📧 Имэйл:</strong> {user.email}
+            </li>
+          </ul>
         ) : (
-          <p className="text-muted">Ачааллаж байна...</p>
+          <p className="text-muted text-center">Ачааллаж байна...</p>
         )}
       </div>
     </div>

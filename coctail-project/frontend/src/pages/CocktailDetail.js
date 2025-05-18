@@ -17,17 +17,26 @@ function CocktailDetail() {
     return (
         <div className="container mt-5">
             <div className="card shadow-sm p-4">
-                <h2>{cocktail.name}</h2>
-                {cocktail.image && (
-                    <img
-                        src={cocktail.image}
-                        alt={cocktail.name}
-                        className="img-fluid mb-3"
-                        style={{ maxHeight: '300px', objectFit: 'cover' }}
-                    />
-                )}
-                <p><strong>Орц:</strong> {cocktail.ingredients}</p>
-                <p><strong>Хийх заавар:</strong> {cocktail.instructions}</p>
+                <div className="row">
+                    {/* Зураг - зүүн талд */}
+                    <div className="col-md-4 mb-3">
+                        {cocktail.image && (
+                            <img
+                                src={cocktail.image}
+                                alt={cocktail.name}
+                                className="img-fluid"
+                                style={{ width: '100%', height: 'auto' }}
+                            />
+                        )}
+                    </div>
+
+                    {/* Текст - баруун талд */}
+                    <div className="col-md-8">
+                        <h2>{cocktail.name}</h2>
+                        <p><strong>Орц:</strong> {cocktail.ingredients}</p>
+                        <p><strong>Хийх заавар:</strong> {cocktail.instructions}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
